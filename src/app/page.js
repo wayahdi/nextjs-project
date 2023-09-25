@@ -1,5 +1,8 @@
 import './main.css'
-import style from './text.module.css'
+import { Button, ConfigProvider } from 'antd';
+
+import theme from '@/utils/themeConfig';
+// import "@/style/master.css";
 
 export default function Home() {
   const mainStyle = {
@@ -9,9 +12,10 @@ export default function Home() {
     height:100 }
 
   return (
-    <div style={mainStyle}>
-      <p className='textRed'>Halo</p>
-      <p className={style.textRed}>Halo</p>
-    </div>
+    <ConfigProvider theme={theme}>
+      <div className="App">
+        <Button type="primary">Button</Button>
+      </div>
+    </ConfigProvider> 
   )
 }
